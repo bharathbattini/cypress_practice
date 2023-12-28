@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Cypress Practice and Implementation', () => {
 
     beforeEach(() => {
