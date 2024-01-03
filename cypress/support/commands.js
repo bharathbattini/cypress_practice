@@ -26,4 +26,7 @@
 
 import 'cypress-file-upload';
 import 'cypress-plugin-api';
+import 'cypress-iframe';
+import 'cypress-mochawesome-reporter/register';
+
 // import 'neat-csv';
