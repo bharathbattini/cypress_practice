@@ -1,3 +1,5 @@
+node_modules
+
 # Logs
 logs
 *.log
@@ -130,4 +132,4 @@ dist
 .pnp.*
 
 # node modules
-node_modules/
+
