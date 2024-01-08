@@ -29,12 +29,13 @@ describe('Page Object Model Practice', () => {
         hp.headerLogoClick();
         hp.element.contactUsElement();
         hp.headerLogoClick();
+        cy.scrollTo('bottom');
 
     });
 
 });
 
-describe.only('HomePage e2e Testscript', () => {
+describe('HomePage e2e Testscript', () => {
 
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err) => {
@@ -47,6 +48,9 @@ describe.only('HomePage e2e Testscript', () => {
 
         cy.visit('https://atriina.com');
         homepage.getQuoteButton();
+        cy.reload();
+        cy.wait(5000);
+        cy.reload(true);
 
 
     });
