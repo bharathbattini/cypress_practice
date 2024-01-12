@@ -84,12 +84,16 @@ describe('Cypress Practice and Implementation', () => {
 
     });
 
-    it('File Upload in Cypress', () => {
-
+    it('File Upload in Cypress', { timeout: 5000 }, () => {
         cy.visit('https://the-internet.herokuapp.com/upload');
+        cy.get('h3').should('have.text', 'File Uploader');
+
         //attachFile will attach the file in fixtures
         cy.get('#file-upload').attachFile('1financelogo.png');
 
+        cy.get('#file-submit').click({ timeout: 5000 });
+        cy.get('h3').should('have.text', 'File Uploaded!');
+        cy.get('.large-4 > div > a').click();
     });
 
 });

@@ -5,31 +5,49 @@ const homepage = new HomePage();
 describe('Page Object Model Practice', () => {
 
     beforeEach(() => {
-        Cypress.on('uncaught:exception', (err) => {
-            // returning false here prevents Cypress from failing the test
-            console.log('Cypress detected uncaught exception: ', err);
-            return false;
-        });
+
+        cy
+            .visit('/');
+        Cypress
+            .on('uncaught:exception', (err) => {
+                // returning false here prevents Cypress from failing the test
+                console
+                    .log('Cypress detected uncaught exception: ', err);
+                return false;
+            });
     });
 
     it('Home Page Header Functionality', () => {
 
-        cy.visit('https://atriina.com');
         // hp.hoverAboutUs();
-        hp.headerAboutUs();
-        hp.headerLogoClick();
-        cy.wait(5000);
-        hp.element.businessSolutionElement();
-        hp.headerLogoClick();
-        hp.element.servicesElement();
-        hp.headerLogoClick();
-        hp.element.caseStudyElement();
-        hp.headerLogoClick();
-        hp.element.blogElement();
-        hp.headerLogoClick();
-        hp.element.contactUsElement();
-        hp.headerLogoClick();
-        cy.scrollTo('bottom');
+        hp
+            .headerAboutUs();
+        hp
+            .headerLogoClick();
+        cy
+            .wait(5000);
+        hp
+            .element.businessSolutionElement();
+        hp
+            .headerLogoClick();
+        hp
+            .element.servicesElement();
+        hp
+            .headerLogoClick();
+        hp
+            .element.caseStudyElement();
+        hp
+            .headerLogoClick();
+        hp
+            .element.blogElement();
+        hp
+            .headerLogoClick();
+        hp
+            .element.contactUsElement();
+        hp
+            .headerLogoClick();
+        cy
+            .scrollTo('bottom');
 
     });
 
@@ -38,21 +56,36 @@ describe('Page Object Model Practice', () => {
 describe('HomePage e2e Testscript', () => {
 
     beforeEach(() => {
-        Cypress.on('uncaught:exception', (err) => {
-            // returning false here prevents Cypress from failing the test
-            console.log('Cypress detected uncaught exception: ', err);
-            return false;
-        });
+
+        cy
+            .visit('/');
+        Cypress
+            .on('uncaught:exception', (err) => {
+                // returning false here prevents Cypress from failing the test
+                console
+                    .log('Cypress detected uncaught exception: ', err);
+                return false;
+            });
+
     });
     it('HomePage with Get Quote', () => {
 
-        cy.visit('https://atriina.com');
-        homepage.getQuoteButton();
-        cy.reload();
-        cy.wait(5000);
-        cy.reload(true);
+        cy
+            .intercept({
+                method: 'POST',
+                url: 'https://va.tawk.to/v1/session/start',
+            }).as('failedApi')
 
-
+        cy
+            .wait('@failedApi')
+            .its('response.StatusCode')
+            .should('eq', undefined);
+        /* ==== Generated with Cypress Studio ==== */
+        cy
+            .get('#menu-item-5062 > a').click({ force: true });
+        cy
+            .get('#menu-item-16332 > a').click({ force: true });
+        /* ==== End Cypress Studio ==== */
     });
 
 });

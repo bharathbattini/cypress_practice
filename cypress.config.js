@@ -13,12 +13,15 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   env: {
 
-    baseUrl: 'https://newqa.customer.onefin.app/'
 
   },
-
+  experimentalStudio: true,
   e2e: {
+    baseUrl: 'https://atriina.com',
+
     setupNodeEvents(on, config) {
+
+
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
     },
