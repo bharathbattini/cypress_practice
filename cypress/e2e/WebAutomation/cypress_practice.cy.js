@@ -1,6 +1,7 @@
 describe('Cypress Practice and Implementation', () => {
 
     beforeEach(() => {
+
         Cypress.on('uncaught:exception', (err) => {
             // returning false here prevents Cypress from failing the test
             console.log('Cypress detected uncaught exception: ', err);
@@ -95,5 +96,21 @@ describe('Cypress Practice and Implementation', () => {
         cy.get('h3').should('have.text', 'File Uploaded!');
         cy.get('.large-4 > div > a').click();
     });
+
+    it('How to open a link in a same browser', () => {
+
+        cy.visit('/');
+        cy.wait(2000);
+        cy.scrollTo('bottomLeft');
+        // by using in invoke method we can remove attribute target
+        cy.get('div>div>span>a.elementor-icon.elementor-social-icon.elementor-social-icon-linkedin-in.elementor-repeater-item-5cbbc40').eq(1).invoke('removeAttr', 'target').click();
+        cy.go('back');
+        cy.url().should('include', 'atriina');
+        //by changing/modifying the target attribute to _self
+        cy.get('div>div>span>a.elementor-icon.elementor-social-icon.elementor-social-icon-linkedin-in.elementor-repeater-item-5cbbc40').eq(1).invoke('attr', 'target', '_self').click();
+        cy.wait(2000);
+
+    });
+
 
 });
