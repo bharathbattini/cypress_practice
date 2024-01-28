@@ -1,18 +1,13 @@
-name: Cypress Tests
-
-on: push
-
-schedule: ## Schedule the job to run at 12.am daily.
+name: cypress end to end
+on:
+  schedule:
+    # runs tests every day at 4am
     - cron: '0 0 * * *'
-    
 jobs:
-  cypress-run:
+  nightly:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Cypress run
+      - name: Cypress nightly tests 🌃
         uses: cypress-io/github-action@v6
-    
-  
-       
