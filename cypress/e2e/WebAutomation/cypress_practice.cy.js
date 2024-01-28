@@ -112,5 +112,21 @@ describe('Cypress Practice and Implementation', () => {
 
     });
 
+    it('Drag and Drop in Cypress', () => {
+
+        cy.visit('https://www.globalsqa.com/demo-site/draganddrop/');
+        cy.get('h1').should('have.text', 'Drag And Drop');
+        // cy.get('#gallery');
+        // cy.get('#gallery > li:nth-child(1)');
+    });
+
+    it.only('Drag and Drop in Cypress', () => {
+
+        cy.visit('https://www.flipkart.com/mobiles/mi~brand/pr?sid=tyy%2C4io&otracker=nmenu_sub_Electronics_0_Mi');
+        cy.get('[title="4 GB"] > ._1Y4Vhm > ._2iDkf8 > ._24_Dny').check();
+        // cy.get('#gallery');
+        // cy.get('#gallery > li:nth-child(1)');
+    });
+
 
 });

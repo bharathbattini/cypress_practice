@@ -2,6 +2,9 @@ name: Cypress Tests
 
 on: push
 
+schedule: ## Schedule the job to run at 12.am daily.
+    - cron: '0 0 * * *'
+    
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -10,4 +13,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Cypress run
         uses: cypress-io/github-action@v6
+    
+  
        
