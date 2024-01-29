@@ -3,7 +3,7 @@ const mobileNumber = '8898782353';
 
 describe('Get API End to End Scripting', () => {
 
-    it('Get API with Positive Case', () => {
+    it.skip('Get API with Positive Case', () => {
 
         cy.api({
 

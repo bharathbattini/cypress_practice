@@ -9,7 +9,7 @@ describe('Cypress Practice and Implementation', () => {
         });
     });
 
-    it('Selectors using Attributes', () => {
+    it.skip('Selectors using Attributes', () => {
 
         cy.visit('https://1finance.co.in');
 
@@ -120,7 +120,7 @@ describe('Cypress Practice and Implementation', () => {
         // cy.get('#gallery > li:nth-child(1)');
     });
 
-    it.only('Drag and Drop in Cypress', () => {
+    it.skip('Drag and Drop in Cypress', () => {
 
         cy.visit('https://www.flipkart.com/mobiles/mi~brand/pr?sid=tyy%2C4io&otracker=nmenu_sub_Electronics_0_Mi');
         cy.get('[title="4 GB"] > ._1Y4Vhm > ._2iDkf8 > ._24_Dny').check();

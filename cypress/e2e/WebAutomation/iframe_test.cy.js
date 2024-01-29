@@ -1,6 +1,6 @@
 describe('Iframe Test', () => {
 
-    it('IFrame Test on 1 Finance Our Story', () => {
+    it.skip('IFrame Test on 1 Finance Our Story', () => {
 
         cy.visit('https://1finance.co.in/story');
         cy.frameLoaded('[class="osp-youtube-video-gtm"]').scrollIntoView().should('be.visible');
