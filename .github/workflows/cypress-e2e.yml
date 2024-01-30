@@ -2,12 +2,17 @@ name: cypress end to end
 on:
   schedule:
     # runs tests every day at 6.45am
-    - cron: '0 0 * * *'
+    - cron: '0 * * * *'
+
 jobs:
-  nightly:
+  cypresspractice:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Cypress nightly tests 🌃
         uses: cypress-io/github-action@v6
+      - name: cypress videos
+        uses: |
+              mkdir public
+              cp -r cypress/videos public/videos
