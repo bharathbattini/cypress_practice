@@ -12,7 +12,4 @@ jobs:
         uses: actions/checkout@v4
       - name: Cypress nightly tests 🌃
         uses: cypress-io/github-action@v6
-      - name: cypress videos
-        uses: |
-              mkdir public
-              cp -r cypress/videos public/videos
+
