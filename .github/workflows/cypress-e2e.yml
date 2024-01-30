@@ -1,5 +1,5 @@
 name: cypress end to end
-on:
+on: push
 #  schedule:
     # runs tests every day at 6.45am
  #   - cron: '0 * * * *'
