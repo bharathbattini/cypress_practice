@@ -9,8 +9,7 @@ class HomePageHeader {
         caseStudyElement: () => cy.contains('Case Study').click(),
         blogElement: () => cy.contains('Blog').click(),
         contactUsElement: () => cy.contains('Contact Us').click(),
-
-
+        
     }
 
     headerAboutUs() {

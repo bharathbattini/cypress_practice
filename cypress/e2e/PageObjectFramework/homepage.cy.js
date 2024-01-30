@@ -74,8 +74,8 @@ describe('HomePage e2e Testscript', () => {
             .intercept({
                 method: 'POST',
                 url: 'https://va.tawk.to/v1/session/start',
-            }).as('failedApi')
-
+            }).as('failedApi');
+            
         cy
             .wait('@failedApi')
             .its('response.StatusCode')

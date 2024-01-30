@@ -1,4 +1,5 @@
-describe('Atriina Landing page - Header section', () => {
+
+describe.only('Atriina Landing Page - Header section', () => {
 
     beforeEach(() => {
 
@@ -51,6 +52,14 @@ describe('Atriina Landing page - Header section', () => {
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
+
+    it('Atriina Landing Page - Get Quote', () => {
+
+        cy.get('div > a').parents('..elementor-widget-container').eq(1).click().url().should('contain', 'contact-us');
+        cy.go('back').url().should('eq', 'https://atriina.com/');
+
+    });
+
     it('Atriina Landing Page - Contact Us', () => {
 
         cy.get('div > button').eq(0).click().url().should('eq', 'https://atriina.com/');
