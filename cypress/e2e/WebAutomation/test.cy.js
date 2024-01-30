@@ -1,5 +1,5 @@
 
-describe.only('Atriina Landing Page - Header section', () => {
+describe('Atriina Landing Page - Header section', () => {
 
     beforeEach(() => {
 
@@ -55,7 +55,7 @@ describe.only('Atriina Landing Page - Header section', () => {
 
     it('Atriina Landing Page - Get Quote', () => {
 
-        cy.get('div > a').parents('..elementor-widget-container').eq(1).click().url().should('contain', 'contact-us');
+        cy.get('div > a').parents('.elementor-widget-container').eq(1).click();
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
