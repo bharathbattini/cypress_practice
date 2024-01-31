@@ -1,5 +1,5 @@
 
-describe.skip('Atriina Landing Page - Header section', () => {
+describe.only('Atriina Landing Page - Header section', () => {
 
     beforeEach(() => {
 
