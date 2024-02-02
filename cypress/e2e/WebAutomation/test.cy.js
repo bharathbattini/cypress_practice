@@ -1,7 +1,10 @@
 
-describe.skip('Atriina Landing Page - Header section', () => {
+describe.only('Atriina Landing Page - Header section', () => {
+
 
     beforeEach(() => {
+
+        cy.log(Cypress.version);
 
         Cypress.on('uncaught:exception', (err) => {
             // returning false here prevents Cypress from failing the test
@@ -11,59 +14,83 @@ describe.skip('Atriina Landing Page - Header section', () => {
         cy.visit('/')
     });
 
-    it('Atriina Landing Page - About Us', () => {
+    it('Atriina Landing Page - Header - About Us', () => {
 
-        cy.get('#menu-item-5061').click().url().should('contain', 'about-us');
+        cy.get('#primary-nav').contains('About Us').click().url().should('contain', 'about-us');
+        cy.get('[alt="Atriina"]').eq(0).click({ force: true }).url().should('eq', 'https://atriina.com/');
+
+    });
+
+    it('Atriina Landing Page - Header - Business Solutions', () => {
+
+        cy.get('#primary-nav').contains('Business Solutions').click().url().should('contain', '#');
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
 
-    it('Atriina Landing Page - Business Solutions', () => {
+    it('Atriina Landing Page - Header - Services', () => {
 
-        cy.get('#menu-item-16331').click().url().should('contain', '#');
+        cy.get('#primary-nav').contains('Services').click().url().should('contain', 'services');
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
 
-    it('Atriina Landing Page - Services', () => {
+    it('Atriina Landing Page - Header - Case Study', () => {
 
-        cy.get('#menu-item-5064').click().url().should('contain', 'services');
+        cy.get('#primary-nav').contains('Case Study').click().url().should('contain', 'case-study');
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
 
-    it('Atriina Landing Page - Case Study', () => {
+    it('Atriina Landing Page - Header - Blog', () => {
 
-        cy.get('#menu-item-5065').click().url().should('contain', 'case-study');
+        cy.get('#primary-nav').contains('Blog').click().url().should('contain', 'blogs');
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
 
-    it('Atriina Landing Page - Blog', () => {
+    it('Atriina Landing Page - Header - Contact Us', () => {
 
-        cy.get('#menu-item-12910').click().url().should('contain', 'blogs');
+        cy.get('#primary-nav').contains('Contact Us').click().url().should('contain', 'contact-us');
         cy.go('back').url().should('eq', 'https://atriina.com/');
 
     });
 
-    it('Atriina Landing Page - Contact Us', () => {
+    it('Atriina Landing Page - Header - Get Quote', () => {
 
-        cy.get('#menu-item-5068').click().url().should('contain', 'contact-us');
-        cy.go('back').url().should('eq', 'https://atriina.com/');
-
-    });
-
-    it('Atriina Landing Page - Get Quote', () => {
-
-        cy.get('div > a').parents('.elementor-widget-container').eq(1).click();
-        cy.go('back').url().should('eq', 'https://atriina.com/');
+        cy.get('#modal-btn > .elementor-widget-container > .elementor-button')
+            .click().url().should('eq', 'https://atriina.com/');
+        cy.reload().url().should('eq', 'https://atriina.com/');
 
     });
 
-    it('Atriina Landing Page - Contact Us', () => {
+    it('Atriina Landing Page - Header - Contact Us', () => {
 
         cy.get('div > button').eq(0).click().url().should('eq', 'https://atriina.com/');
 
     });
+
+    it('Atriina Landing Page - Footer - About Us', () => {
+
+        cy.get('.elementor-icon-list-text').contains('About Us').click();
+
+    });
+
+    it('Atriina Landing Page - Footer - Portfolio', () => {
+
+        cy.get('.elementor-icon-list-text').contains('Portfolio')
+            .click().url().should('contain', 'case-study');
+        cy.title().should('contain', "Atrina's Transformative Case Studies");
+    });
+    it.only('Atriina Landing Page - Footer - Portfolio', () => {
+
+        cy.get('.elementor-element-373364a[data-id= "373364a"]')
+            .contains('About Us').click().url().should('contain', 'about-us')
+        cy.wait(2000);
+
+    });
+
+
+
 
 });
