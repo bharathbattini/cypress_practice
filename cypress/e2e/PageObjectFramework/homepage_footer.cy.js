@@ -1,33 +1,38 @@
 import HomePageFooter from "../../pages/homepage_footer";
 
 const hpf = new HomePageFooter();
+const Elements = hpf.element;
 
 describe('Atrina Website Footer Links', () => {
 
-    describe('Logo, Goal and Social Media Links', () => {
+    beforeEach('Open the BaseUrl and Get the Expections', () => {
 
-        it('', () => {
+        cy.log(Cypress.version);
 
+        Cypress.on('uncaught:exception', (err) => {
+            // returning false here prevents Cypress from failing the test
+            console.log('Cypress detected uncaught exception: ', err);
+            return false;
+        });
+
+        cy.visit('/')
+
+    })
+
+    describe.only('Logo, Goal and Social Media Links', () => {
+
+
+
+        it('Atrina Goals', () => {
+
+            cy.scrollTo('bottomLeft');
+            Elements.footerAtrinaGoal();
 
         });
 
 
     });
-
     describe('Services Section', () => {
-
-        beforeEach('Open the BaseUrl and Get the Expections', () => {
-
-            cy.log(Cypress.version);
-
-            Cypress.on('uncaught:exception', (err) => {
-                // returning false here prevents Cypress from failing the test
-                console.log('Cypress detected uncaught exception: ', err);
-                return false;
-            });
-            cy.visit('/')
-
-        })
 
         it('Digital Transformation', () => {
 
@@ -68,10 +73,19 @@ describe('Atrina Website Footer Links', () => {
 
     });
 
-    describe('Logo, Goal and Social Media Links', () => {
+    describe('Contact Us and Details', () => {
 
-        it('', () => {
+        it('About Us', () => {
 
+            Elements.footerAboutUs().click().url().should('contain', 'about-us');
+
+        });
+
+        it('Our Team', () => {
+
+            cy.get('#primary-nav').contains('About Us').realHover();
+            cy.get('#menu-item-5063').contains('Our Team').click({ force: true });
+            cy.url().should('contain', 'our-team');
 
         });
 

@@ -10,7 +10,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   defaultCommandTimeout: 6000,
   port: 8080,
-  retries: 2,
+  retries: 1,
   reporter: 'cypress-mochawesome-reporter',
   env: {
 
