@@ -1,5 +1,5 @@
 import HomePageFooter from "../../pages/homepage_footer";
-
+import links from "../../pages/webpage_links";
 const hpf = new HomePageFooter();
 const Elements = hpf.element;
 
@@ -15,18 +15,16 @@ describe('Atrina Website Footer Links', () => {
             return false;
         });
 
-        cy.visit('/')
+        cy.visit('/');
 
     })
 
-    describe.only('Logo, Goal and Social Media Links', () => {
-
-
+    describe('Logo, Goal and Social Media Links', () => {
 
         it('Atrina Goals', () => {
 
             cy.scrollTo('bottomLeft');
-            Elements.footerAtrinaGoal();
+            cy.get("div[class='elementor-column.elementor-col-25.elementor-top-column.elementor-element.elementor-element-b15a44d'].p:nth-child(1)");
 
         });
 
@@ -34,9 +32,9 @@ describe('Atrina Website Footer Links', () => {
     });
     describe('Services Section', () => {
 
-        it('Digital Transformation', () => {
+        it.only('Digital Transformation', () => {
 
-            hpf.element.footerServicesDT().click().url().should('contain', 'digital-transformation-agency');
+            hpf.element.footerServicesDT().click().url().should('eq', `${links.digitalTransformationUrl}`);
 
         });
         it('Product Development', () => {
