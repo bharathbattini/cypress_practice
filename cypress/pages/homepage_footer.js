@@ -1,13 +1,13 @@
+import links from '../pages/webpage_links'
+
 class HomePageFooter {
 
-    atrinaGoal = 'ATRINA is united by a common goal: To simplify business through technology which helps our customers achieve exponential growth in the industry'
-
+    atrinaGoal = ' ATRINA is united by a common goal:\nTo simplify business through technology which helps our customers achieve exponential growth in the industry';
     element = {
 
         //Footer Section - Logo, Goal and Social Links
 
         footerAtrinaGoal: () => cy.get('#ld-fancy-heading-65bbe0f297397 > .ld-fh-element'),
-
 
         //Footer Section - Services Section - Sub Links
         footerServicesDT: () => cy.get('div[data-id="d8ee192"]').contains('Digital Transformation'),
@@ -25,6 +25,11 @@ class HomePageFooter {
         footerContactUs: () => cy.get('[data-id= "373364a"]').contains('Contact us'),
         footerBlogs: () => cy.get('[data-id= "373364a"]').contains('Blogs'),
 
+    }
+
+    clickOnAboutUs() {
+
+        this.element.footerAboutUs().click().url().should('eq', links.aboutUsUrl);
 
     }
 

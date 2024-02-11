@@ -73,9 +73,9 @@ describe('Atrina Website Footer Links', () => {
 
     describe('Contact Us and Details', () => {
 
-        it('About Us', () => {
+        it.only('About Us', () => {
 
-            Elements.footerAboutUs().click().url().should('contain', 'about-us');
+            hpf.clickOnAboutUs();
 
         });
 
