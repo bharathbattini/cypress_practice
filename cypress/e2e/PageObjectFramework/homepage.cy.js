@@ -15,14 +15,6 @@ describe('Validate and Verify The Landing Page with All the Headers', () => {
 
     it('Home Page - Get Quote Verification', () => {
 
-        // cy.get('h3[class="elementor-icon-box-title"]').eq(0).scrollIntoView();
-        // cy.get('h3[class="elementor-icon-box-title"]').eq(0).find('span').invoke('text').then((text) => {
-
-        //     cy.log(text);
-        // });
-
-        // Through Cypress - #ld-fancy-heading-65c18159c1d82 > .ld-fh-element
-        // Through Manual - #ld-fancy-heading-65c479a350a20 > .ld-fh-element
         cy.get('#ld-fancy-heading-65c18159c1d82 > .ld-fh-element').invoke('text').then((goal) => {
 
             cy.log(goal);

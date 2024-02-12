@@ -3,10 +3,14 @@ import links from '../pages/webpage_links'
 class HomePageFooter {
 
     atrinaGoal = ' ATRINA is united by a common goal:\nTo simplify business through technology which helps our customers achieve exponential growth in the industry';
+    actualAddress = 'P3, C Wing, Kailash Business Park, Park Site Rd, HMPL Surya Nagar, Vikhroli West, Mumbai, Maharashtra 400079';
+    actualContactEmail = 'contact@atriina.com';
+    actualContactNumber = '+91 89765 75888';
+    
+
     element = {
 
         //Footer Section - Logo, Goal and Social Links
-
         footerAtrinaGoal: () => cy.get('#ld-fancy-heading-65bbe0f297397 > .ld-fh-element'),
 
         //Footer Section - Services Section - Sub Links

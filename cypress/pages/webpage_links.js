@@ -37,8 +37,10 @@ const links = {
     facebookUrl: 'https://www.facebook.com/AtrinaTechnologiesPvtLtd',
     xUrl: 'https://twitter.com/AtrinaTech',
     instagramUrl: 'https://www.instagram.com/atrina_technologies/',
-    linkedInUrl: 'https://www.linkedin.com/company/atrina-technologies-pvt-ltd/?originalSubdomain=in'
+    linkedInUrl: 'https://www.linkedin.com/company/atrina-technologies-pvt-ltd/?originalSubdomain=in',
 
+    termsAndConditionsUrl: 'https://atriina.com/terms-conditions/',
+    privacyPolicyUrl: 'https://atriina.com/privacy-policy/'
 
 }
 

@@ -1,5 +1,5 @@
 
-describe('Atriina Landing Page - Header section', () => {
+describe.only('Atriina Landing Page - Header section', () => {
 
 
     beforeEach(() => {
@@ -69,5 +69,31 @@ describe('Atriina Landing Page - Header section', () => {
         cy.get('div > button').eq(0).click().url().should('eq', 'https://atriina.com/');
 
     });
+
+    it('Our Team', () => {
+
+        cy.get('#primary-nav').contains('About Us').realHover();
+        cy.get('#menu-item-5063').contains('Our Team').click({ force: true });
+        cy.url().should('contain', 'our-team');
+
+    });
+
+    it('Life At Atrina', () => {
+
+        cy.get('#primary-nav').contains('About Us').realHover();
+        cy.get('#menu-item-5063').contains('Life At Atrina').click({ force: true });
+        cy.url().should('contain', 'life-at-atrina/');
+
+    });
+
+    it.only('Careers', () => {
+
+        cy.get('#primary-nav').contains('About Us').realHover();
+        cy.get('#menu-item-5063').contains('Careers').click({ force: true });
+        cy.url().should('contain', 'careers/');
+
+    });
+
+
 
 });
