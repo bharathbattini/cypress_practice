@@ -6,13 +6,14 @@ module.exports = defineConfig({
   viewportHeight: 800,
   video: true,
   watchForFileChanges: false,
-  pageLoadTimeout: 60000,
+  pageLoadTimeout: 40000,
   chromeWebSecurity: false,
   defaultCommandTimeout: 6000,
   port: 8080,
   retries: 1,
   reporter: 'cypress-mochawesome-reporter',
   experimentalStudio: true,
+
   e2e: {
 
     baseUrl: 'https://atriina.com',

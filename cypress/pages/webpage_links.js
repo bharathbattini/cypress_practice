@@ -30,6 +30,7 @@ const links = {
     blogUrl: 'https://atriina.com/blogs/',
     contactUsUrl: 'https://atriina.com/contact-us/',
 
+    url: 'https://atriina.com/',
     headerLogoUrl: 'https://atriina.com/',
     footerLogoUrl: 'https://atriina.com/#',
 

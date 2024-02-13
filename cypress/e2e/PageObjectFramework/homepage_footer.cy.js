@@ -115,6 +115,38 @@ describe('Atrina Website Footer Links', () => {
 
     });
 
+    describe('Company Section', () => {
+
+        it('About Us', () => {
+
+            Elements.footerAboutUs().click().url().should('eq', links.aboutUsUrl);
+
+        });
+
+        it('Portfolio', () => {
+
+            Elements.footerPortfolio().click().url().should('eq', links.caseStudyUrl);
+
+        });
+
+        it('Careers', () => {
+
+            Elements.footerCareers().click().url().should('eq', links.careerUrl);
+
+        });
+
+        it('Contact Us', () => {
+
+            Elements.footerContactUs().click().url().should('eq', links.contactUsUrl);
+
+        });
+
+        it('Blogs', () => {
+
+        });
+
+    });
+
     describe('Contact Us and Details', () => {
 
         it('Contact Us Card', () => {
@@ -160,6 +192,8 @@ describe('Atrina Website Footer Links', () => {
 
     describe('Atrina Website License, Terms and Conditions and Privacy Policy', () => {
 
+
+
         it('Atrina License', () => {
 
             cy.get('h2.elementor-heading-title').last().invoke('text').then((license) => {
@@ -170,13 +204,14 @@ describe('Atrina Website Footer Links', () => {
 
         });
         it('Terms and Conditions', () => {
-
-            cy.get('a > .elementor-icon-list-text').contains('Terms and Conditions').click().url().should('eq', links.termsAndConditionsUrl);
+            cy.get('a > .elementor-icon-list-text')
+                .contains('Terms and Conditions').click().url().should('eq', links.termsAndConditionsUrl);
 
         });
         it('Privacy Policy', () => {
 
-            cy.get('a > .elementor-icon-list-text').contains('Privacy Policy').click().url().should('eq', links.privacyPolicyUrl);
+            cy.get('a > .elementor-icon-list-text')
+                .contains('Privacy Policy').click().url().should('eq', links.privacyPolicyUrl);
             cy.get('h2').contains('Privacy Policy').should('have.class', 'elementor-heading-title');
 
         });
