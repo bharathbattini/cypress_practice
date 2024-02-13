@@ -11,7 +11,7 @@ describe('Validate and Verify The Landing Page with All the Headers', () => {
             return false;
         });
         cy.visit('/');
-    })
+    });
 
     it('Home Page - Get Quote Verification', () => {
 
