@@ -200,7 +200,7 @@ describe('Atrina Website Footer Links', () => {
 
                 expect(license).to.eq(' © 2023 Atrina LLP. All Rights Reserved');
 
-            })
+            });
 
         });
         it('Terms and Conditions', () => {
