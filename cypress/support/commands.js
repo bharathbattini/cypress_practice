@@ -29,5 +29,6 @@ import 'cypress-plugin-api';
 import 'cypress-iframe';
 import 'cypress-mochawesome-reporter/register';
 import "cypress-real-events";
+import 'image-to-base64'
 // import 'neat-csv';
 

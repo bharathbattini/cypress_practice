@@ -66,7 +66,7 @@ describe('Atriina Landing Page - Header section', () => {
 
     });
 
-    describe.only(('Sub Menus of About Us'), () => {
+    describe(('Sub Menus of About Us'), () => {
 
         it('Our Team', () => {
 

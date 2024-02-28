@@ -13,14 +13,15 @@ module.exports = defineConfig({
   retries: 1,
   reporter: 'cypress-mochawesome-reporter',
   experimentalStudio: true,
-
   e2e: {
+    // specPattern: 'cypress/e2e/*.feature',
 
     baseUrl: 'https://atriina.com',
 
     setupNodeEvents(on, config) {
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
+
     },
   },
 

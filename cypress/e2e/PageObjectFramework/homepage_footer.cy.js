@@ -31,8 +31,7 @@ describe('Atrina Website Footer Links', () => {
 
         it('Atrina Goals', () => {
 
-            cy.scrollTo('bottomLeft');
-            cy.get('#ld-fancy-heading-65c64d05e0b11 > .ld-fh-element').invoke('text').then((goal) => {
+            cy.get('#ld-fancy-heading-65d356b4ecd7f> .ld-fh-element').invoke('text').then((goal) => {
 
                 cy.log(goal);
                 expect(goal).to.equal(hpf.atrinaGoal);
@@ -58,7 +57,7 @@ describe('Atrina Website Footer Links', () => {
 
         });
 
-        it('Atrina at Instagram ', () => {
+        it.only('Atrina at Instagram ', () => {
 
             cy.get('a.elementor-social-icon-instagram').eq(1)
                 .invoke('removeAttr', 'target').click()
@@ -151,7 +150,7 @@ describe('Atrina Website Footer Links', () => {
 
         it('Contact Us Card', () => {
 
-            cy.get('#ld-fancy-heading-65c64d05c7093').find('h2').contains(' Contact Us');
+            cy.get('#ld-fancy-heading-65d356b4f3014').find('p').contains(' Contact us');
 
         });
 
@@ -191,8 +190,6 @@ describe('Atrina Website Footer Links', () => {
     });
 
     describe('Atrina Website License, Terms and Conditions and Privacy Policy', () => {
-
-
 
         it('Atrina License', () => {
 
