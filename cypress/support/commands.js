@@ -32,3 +32,16 @@ import "cypress-real-events";
 import 'image-to-base64'
 // import 'neat-csv';
 
+Cypress.Commands.add('login', (username, password) => {
+
+
+    cy.visit('https://ucl-uat.switchmyloan.in');
+    cy.get('#login_email').type(username);
+    cy.get('#login_password').type(password);
+    cy.get('button.btn').contains(' Login').click();
+
+
+
+});
+
+

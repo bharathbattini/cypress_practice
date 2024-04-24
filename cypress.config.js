@@ -13,10 +13,12 @@ module.exports = defineConfig({
   retries: 1,
   reporter: 'cypress-mochawesome-reporter',
   experimentalStudio: true,
+  failOnStatusCode: false,
+
   e2e: {
     // specPattern: 'cypress/e2e/*.feature',
 
-    baseUrl: 'https://atriina.com',
+    baseUrl: 'https://ucl-uat.switchmyloan.in',
 
     setupNodeEvents(on, config) {
       // implement node event listeners here
