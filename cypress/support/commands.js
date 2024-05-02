@@ -30,6 +30,7 @@ import 'cypress-iframe';
 import 'cypress-mochawesome-reporter/register';
 import "cypress-real-events";
 import 'image-to-base64'
+import '@4tw/cypress-drag-drop'
 // import 'neat-csv';
 
 Cypress.Commands.add('login', (username, password) => {
