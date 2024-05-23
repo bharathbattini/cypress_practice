@@ -1,6 +1,7 @@
 class HomePage {
 
     element = {
+        
         getHeadingofHomePage: () => cy.get('.lqd-highlight-txt'),
         getQuoteButtonElement: () => cy.get('a > span[data-text="Let\'s task"]'),
         getReadMoreButtonElement: () => cy.get('span[data-text="Read More"]'),

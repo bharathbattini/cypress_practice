@@ -17,7 +17,9 @@ describe.only('Trigger usage', () => {
         cy.get('#draggable').drag('#droppable', { force: true });
         cy.wait(2000);
         cy.get('.ui-state-highlight').invoke('text').then((text) => {
+
             expect(text).to.equal('Dropped!');
+
         });
 
     });

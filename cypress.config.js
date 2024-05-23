@@ -15,6 +15,7 @@ module.exports = defineConfig({
   experimentalStudio: true,
   failOnStatusCode: false,
 
+
   e2e: {
     // specPattern: 'cypress/e2e/*.feature',
 

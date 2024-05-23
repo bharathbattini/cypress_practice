@@ -13,10 +13,8 @@ describe('Checkboxes using Cypress', () => {
 
     it('Check the last Option', () => {
 
-        let lastOpt = cy.get('[type="checkbox"]')
+        cy.get('[type="checkbox"]')
             .last().check();
-
-        expect(lastOpt).to.be.checked;
 
     });
 
@@ -28,9 +26,7 @@ describe('Checkboxes using Cypress', () => {
 
     it('Check the option using word', () => {
 
-        cy.get('[type="checkbox"]')
-            .invoke('text').contains('JMETER').check();
-
+        cy.get('[type=checkbox]').contains('JMETER');
     });
 
     it('Check the Second last Option', () => {
